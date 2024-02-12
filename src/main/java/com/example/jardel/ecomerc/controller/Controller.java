@@ -30,7 +30,13 @@ public class Controller {
         return bancoService.create(banco);
     }
     @PutMapping("/putProdutos")
-    public List<Banco> putProdutos(Banco banco){
+    public Banco putProdutos(@RequestBody Banco banco){
         return bancoService.update(banco);
     }
+    @DeleteMapping("/putProdutos")
+    public List<Banco> deleteProdutos(@RequestBody Banco banco){
+        return bancoService.delete(banco);
+    }
+
+
 }
