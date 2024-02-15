@@ -25,7 +25,7 @@ public class Produtos {
        return bancoService.list();
     }
 
-    @PostMapping("/putProdutos")
+    @PostMapping("/postProdutos")
     public List<Banco> postProdutos(@RequestBody Banco banco){
         return bancoService.create(banco);
     }
@@ -33,7 +33,7 @@ public class Produtos {
     public Banco putProdutos(@RequestBody Banco banco){
         return bancoService.update(banco);
     }
-    @DeleteMapping("/putProdutos")
+    @DeleteMapping("/delProdutos")
     public List<Banco> deleteProdutos(@RequestBody Banco banco){
         return bancoService.delete(banco);
     }
