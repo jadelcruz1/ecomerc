@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/produto")
 public class Produtos {
 
     private BancoService bancoService;
@@ -15,25 +16,20 @@ public class Produtos {
         this.bancoService = bancoService;
     }
 
-    @GetMapping("/")
-    public String home() {
-        return "Aqui estão listados os produtos";
-    }
-
-    @GetMapping("/produtos")
+    @GetMapping()
    public List<Banco> produtos() {
        return bancoService.list();
     }
 
-    @PostMapping("/postProdutos")
+    @PostMapping()
     public List<Banco> postProdutos(@RequestBody Banco banco){
         return bancoService.create(banco);
     }
-    @PutMapping("/putProdutos")
+    @PutMapping()
     public Banco putProdutos(@RequestBody Banco banco){
         return bancoService.update(banco);
     }
-    @DeleteMapping("/delProdutos")
+    @DeleteMapping()
     public List<Banco> deleteProdutos(@RequestBody Banco banco){
         return bancoService.delete(banco);
     }

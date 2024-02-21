@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/cadastro")
 public class Cadastros {
 
     private CadastroService cadastroService;
@@ -16,25 +17,25 @@ public class Cadastros {
         this.cadastroService = cadastroService;
     }
 
-    @GetMapping("/cadastro")
+   /* @GetMapping("/cadastramento")
     public String home() {
         return "Aqui estão listados os cadastros";
-    }
+    }*/
 
-    @GetMapping("/cadastros")
+    @GetMapping()
     public List<Cadastro> cadastros() {
         return cadastroService.list();
     }
 
-    @PostMapping("/postCadastros")
+    @PostMapping()
     public List<Cadastro> postCadastros(@RequestBody Cadastro  cadastro){
         return cadastroService.create(cadastro);
     }
-    @PutMapping("/putCadastros")
+    @PutMapping()
     public List<Cadastro> putCadastros(@RequestBody Cadastro cadastro){
         return cadastroService.update(cadastro);
     }
-    @DeleteMapping("/deleteCadastros")
+    @DeleteMapping()
     public List<Cadastro> deleteCadastros(@RequestBody Cadastro cadastro){
         return cadastroService.delete(cadastro);
     }

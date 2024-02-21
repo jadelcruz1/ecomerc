@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/fornecedor")
 public class Fornecedores {
 
    private FornecedorService fornecedorService;
@@ -18,25 +19,25 @@ public class Fornecedores {
         this.fornecedorService = fornecedorService;
     }
 
-    @GetMapping("/Fornecedor")
+   /*@GetMapping()
     public String fornecedores() {
         return "Aqui estão listados os fornecedores";
-    }
+    }*/
 
-    @GetMapping("/Fornecedores")
+    @GetMapping()
     public List<Fornecedor> fornecedor() {
         return fornecedorService.list();
     }
-    @PostMapping("/Fornecedores")
+    @PostMapping()
     public List<Fornecedor> postFornecedores(@RequestBody Fornecedor fornecedor){
         return fornecedorService.create(fornecedor);
     }
-    @PutMapping("/Fornecedores")
+    @PutMapping()
     public List<Fornecedor> putFornecedores(@RequestBody Fornecedor fornecedor){
         return fornecedorService.update(fornecedor);
     }
 
-    @DeleteMapping("/Fornecedores")
+    @DeleteMapping()
     public List<Fornecedor> deleteFornecedores(@RequestBody Fornecedor fornecedor){
         return fornecedorService.delete(fornecedor);
     }
