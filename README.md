@@ -6,4 +6,7 @@ Maven ({https://maven.apache.org/download.cgi})
 # http://localhost:8090/swagger-ui/index.html
 Swagger ({https://glysns.gitbook.io/spring-framework/spring-web/swagger})
 
+# uso de exception no projeto
+Exception Handlers ({https://glysns.gitbook.io/spring-framework/spring-web/exception-handlers})
+
 
